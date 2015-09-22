@@ -54,6 +54,18 @@ let Demo = React.createClass({
     let items;
 
     switch (this.props.menus[this.state.currentMenu].items) {
+      case 'ext':
+        jsx = (
+          <Menu id={ this.state.currentMenu } pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } extension>
+            <a href=""><i className="fa fa-fw fa-star-o"></i><span>Favorites</span></a>
+            <a href=""><i className="fa fa-fw fa-bell-o"></i><span>Alerts</span></a>
+            <a href=""><i className="fa fa-fw fa-envelope-o"></i><span>Messages</span></a>
+            <a href=""><i className="fa fa-fw fa-comment-o"></i><span>Comments</span></a>
+            <a href=""><i className="fa fa-fw fa-bar-chart-o"></i><span>Analytics</span></a>
+            <a href=""><i className="fa fa-fw fa-newspaper-o"></i><span>Reading List</span></a>
+          </Menu>
+        );
+        break;
       case 1:
         items = [
           <a key="0" href=""><i className="fa fa-fw fa-star-o"></i><span>Favorites</span></a>,
@@ -104,7 +116,7 @@ let Demo = React.createClass({
     } else {
       jsx = (
         <MenuWrap wait={ 20 }>
-          <Menu id={ this.state.currentMenu } pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" }>
+          <Menu id={ this.state.currentMenu } pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } extension>
             { items }
           </Menu>
         </MenuWrap>

@@ -195,7 +195,7 @@ export default (styles) => {
     },
 
     render() {
-      let items, svg, overlay;
+      let items, svg, overlay, extension;
 
       // Add styles to user-defined menu items.
       if (this.props.children) {
@@ -224,6 +224,37 @@ export default (styles) => {
         overlay = <div className="bm-overlay" onClick={ this.toggleMenu } style={ this.getStyles('overlay') }></div>;
       }
 
+      if (this.props.extension) {
+        let extStyles = (isOpen) => {
+          return {
+            backgroundColor: '#dfdfdf',
+            position: 'fixed',
+            zIndex: 1,
+            width: 110,
+            height: '100%',
+            transform: isOpen ? 'translate3d(300px, 0, 0)' : 'translate3d(0, 0, 0)',
+            transition: 'all 0.5s',
+            paddingTop: isOpen? 40 : 110
+          };
+        };
+
+        let iconStyles = {
+          display: 'block',
+          margin: '0 auto 30px'
+        };
+
+        extension = (
+          <div style={ extStyles(this.state.isOpen) }>
+            <a href=""><i className="fa fa-2x fa-fw fa-star-o" style={ iconStyles }></i></a>
+            <a href=""><i className="fa fa-2x fa-fw fa-bell-o" style={ iconStyles }></i></a>
+            <a href=""><i className="fa fa-2x fa-fw fa-envelope-o" style={ iconStyles }></i></a>
+            <a href=""><i className="fa fa-2x fa-fw fa-comment-o" style={ iconStyles }></i></a>
+            <a href=""><i className="fa fa-2x fa-fw fa-bar-chart-o" style={ iconStyles }></i></a>
+            <a href=""><i className="fa fa-2x fa-fw fa-newspaper-o" style={ iconStyles }></i></a>
+          </div>
+        );
+      }
+
       return (
         <div>
           { overlay }
@@ -238,6 +269,7 @@ export default (styles) => {
               <CrossIcon onClick={ this.toggleMenu } styles={ this.props.styles } image={ this.props.customCrossIcon } />
             </div>
           </div>
+          { extension }
           <BurgerIcon onClick={ this.toggleMenu } styles={ this.props.styles } image={ this.props.customBurgerIcon } />
         </div>
       );
