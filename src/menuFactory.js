@@ -184,7 +184,7 @@ export default (styles) => {
     render() {
       return (
         <div>
-          {!this.props.noOverlay ? <div className="bm-overlay" onClick={this.toggleMenu} style={this.getStyles('overlay')}></div> : null}
+          {!this.props.noOverlay ? <div className="bm-overlay" onTouchTap={ this.toggleMenu } onClick={this.toggleMenu} style={this.getStyles('overlay')}></div> : null}
           <div id={this.props.id} className={"bm-menu-wrap"} style={this.getStyles('menuWrap')}>
             {styles.svg ? (
               <div className="bm-morph-shape" style={this.getStyles('morphShape')}>
@@ -205,10 +205,10 @@ export default (styles) => {
               </nav>
             </div>
             <div style={this.getStyles('closeButton')}>
-              <CrossIcon onClick={this.toggleMenu} styles={this.props.styles} customIcon={this.props.customCrossIcon ? this.props.customCrossIcon : null} />
+              <CrossIcon onTouchTap={this.toggleMenu} onClick={this.toggleMenu} styles={this.props.styles} customIcon={this.props.customCrossIcon ? this.props.customCrossIcon : null} />
             </div>
           </div>
-          <BurgerIcon onClick={this.toggleMenu} styles={this.props.styles} customIcon={this.props.customBurgerIcon ? this.props.customBurgerIcon : null} />
+          <BurgerIcon  onTouchTap={this.toggleMenu} onClick={this.toggleMenu} styles={this.props.styles} customIcon={this.props.customBurgerIcon ? this.props.customBurgerIcon : null} />
         </div>
       );
     }
