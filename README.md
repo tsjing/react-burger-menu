@@ -1,6 +1,8 @@
 react-burger-menu [![Build Status](https://travis-ci.org/negomi/react-burger-menu.svg?branch=master)](https://travis-ci.org/negomi/react-burger-menu)
 =================
 
+**This is a modified version of the original `react-burger-menu`. It uses `react-tap-event-plugin` and `onTouchTap` to eliminate click delays.**
+
 An off-canvas sidebar React component with a collection of effects and styles using CSS transitions and SVG path animations.
 
 ## Demo & examples
