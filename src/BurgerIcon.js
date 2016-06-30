@@ -71,8 +71,8 @@ const BurgerIcon = Radium(React.createClass({
     return (
       <div className="bm-burger-button" style={ [{ zIndex: 1 }, this.props.styles.bmBurgerButton] }>
         { icon }
-        <button onClick={ this.props.onClick }
-          onTouchTap={ this.props.onClick }
+        <button 
+          onTouchTap={ this.props.onTouchTap }
 		  onMouseEnter={ this.handleHover }
           onMouseLeave={ this.handleHover }
           style={ buttonStyle }>

@@ -89,8 +89,7 @@ var BurgerIcon = (0, _radium2['default'])(_react2['default'].createClass({
                     this.props.styles.bmBurgerButton
                 ]
             }, icon, _react2['default'].createElement('button', {
-                onClick: this.props.onClick,
-                onTouchTap: this.props.onClick,
+                onTouchTap: this.props.onTouchTap,
                 onMouseEnter: this.handleHover,
                 onMouseLeave: this.handleHover,
                 style: buttonStyle
@@ -205,8 +204,7 @@ var CrossIcon = (0, _radium2['default'])(_react2['default'].createClass({
                     this.props.styles.bmCrossButton
                 ]
             }, icon, _react2['default'].createElement('button', {
-                onTouchTap: this.props.onClick,
-                onClick: this.props.onClick,
+                onTouchTap: this.props.onTouchTap,
                 style: buttonStyle
             }, 'Close Menu'));
         }
@@ -424,7 +422,6 @@ exports['default'] = function (styles) {
             return _react2['default'].createElement('div', null, !this.props.noOverlay ? _react2['default'].createElement('div', {
                 className: 'bm-overlay',
                 onTouchTap: this.toggleMenu,
-                onClick: this.toggleMenu,
                 style: this.getStyles('overlay')
             }) : null, _react2['default'].createElement('div', {
                 id: this.props.id,
@@ -453,12 +450,10 @@ exports['default'] = function (styles) {
                 return _react2['default'].cloneElement(item, extraProps);
             }))), _react2['default'].createElement('div', { style: this.getStyles('closeButton') }, _react2['default'].createElement(_CrossIcon2['default'], {
                 onTouchTap: this.toggleMenu,
-                onClick: this.toggleMenu,
                 styles: this.props.styles,
                 customIcon: this.props.customCrossIcon ? this.props.customCrossIcon : null
             }))), _react2['default'].createElement(_BurgerIcon2['default'], {
                 onTouchTap: this.toggleMenu,
-                onClick: this.toggleMenu,
                 styles: this.props.styles,
                 customIcon: this.props.customBurgerIcon ? this.props.customBurgerIcon : null
             }));

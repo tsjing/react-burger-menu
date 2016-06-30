@@ -119,7 +119,7 @@ describe('BurgerIcon component', () => {
     it('behaves correctly when clicked', () => {
       let clickHandled = false;
       function handleClick() { clickHandled = true; }
-      component = TestUtils.renderIntoDocument(<BurgerIcon onClick={ handleClick } />);
+      component = TestUtils.renderIntoDocument(<BurgerIcon onTouchTap={ handleClick } />);
       const button = TestUtils.findRenderedDOMComponentWithTag(component, 'button');
       TestUtils.Simulate.click(button);
       expect(clickHandled).to.be.true;

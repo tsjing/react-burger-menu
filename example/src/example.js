@@ -126,7 +126,7 @@ let Demo = React.createClass({
       return (
         <a key={ menu }
           className={ classNames({'current-demo': menu === this.state.currentMenu}) }
-          onClick={ this.changeMenu.bind(this, menu) }>
+          onTouchTap={ this.changeMenu.bind(this, menu) }>
           { this.props.menus[menu].buttonText }
         </a>
       );
@@ -137,8 +137,8 @@ let Demo = React.createClass({
         { this.getMenu() }
         <main id="page-wrap">
           <h1><a href="https://github.com/negomi/react-burger-menu">react-burger-menu</a></h1>
-          <a className={ classNames({'side-button': true, 'left': true, 'active': this.state.side === 'left'}) } onClick={ this.changeSide.bind(this, 'left') }>Left</a>
-          <a className={ classNames({'side-button': true, 'right': true, 'active': this.state.side === 'right'}) } onClick={ this.changeSide.bind(this, 'right') }>Right</a>
+          <a className={ classNames({'side-button': true, 'left': true, 'active': this.state.side === 'left'}) } onTouchTap={ this.changeSide.bind(this, 'left') }>Left</a>
+          <a className={ classNames({'side-button': true, 'right': true, 'active': this.state.side === 'right'}) } onTouchTap={ this.changeSide.bind(this, 'right') }>Right</a>
           <h2 className="description">An off-canvas sidebar React component with a collection of effects and styles using CSS transitions and SVG path animations.</h2>
           <nav className="demo-buttons">
             { buttons }

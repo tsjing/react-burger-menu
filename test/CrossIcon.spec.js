@@ -103,7 +103,7 @@ describe('CrossIcon component', () => {
     it('behaves correctly when clicked', () => {
       let clickHandled = false;
       function handleClick() { clickHandled = true; }
-      component = TestUtils.renderIntoDocument(<CrossIcon onClick={ handleClick } />);
+      component = TestUtils.renderIntoDocument(<CrossIcon onTouchTap={ handleClick } />);
       const button = TestUtils.findRenderedDOMComponentWithTag(component, 'button');
       TestUtils.Simulate.click(button);
       expect(clickHandled).to.be.true;
